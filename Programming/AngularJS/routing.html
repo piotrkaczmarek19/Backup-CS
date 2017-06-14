@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-route.min.js"></script>
+		<script>
+			var routingApp = angular.module('routingApp', ['ngRoute']);
+			routingApp.controller('mainCtrl', function($scope){
+
+			})
+			routingApp.controller('nameCtrl', function($scope, $routeParams){
+				$scope.name = 'Piotr';
+			})
+			routingApp.controller('countryCtrl', function($scope, $http, $routeParams){
+				$http.get('countries.json').success(function(data){
+				
+					var country = data.filter(function(entry){
+						return entry.name === $scope.name;
+					})['name'];
+					console.log(country);
+				}) 
+			})
+			routingApp.config(function($routeProvider){
+				$routeProvider.
+					when('/', {
+						template: '<h1>Index</h1><a href="#/name">Name</a>'
+					}).
+					when('/name', {
+						template: '<p>Name: {{name}}</p><a href="#/">Return</a>',
+						controller: 'nameCtrl'
+					}).
+					when('/country/:country', {
+						template: '<h2>{{country}}</h2><a href="#/">Return</a>',
+						controller: 'countryCtrl'
+					}).
+					when('/blue', {
+						template: '<div style="background-color:blue"><h1>BLUE<h1><br><br><br></div>'
+					}).
+					otherwise({redirectTo: '/'});
+			})
+		</script>
+	</head>
+
+	<body >	
+		<a href="#/blue">Blue</a>
+		<a href="#/">Normal</a>	
+		<div ng-app='routingApp' class='container' ng-view>
+		</div>
+	</body>
+</html>

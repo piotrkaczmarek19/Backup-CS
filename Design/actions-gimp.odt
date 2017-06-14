@@ -1,0 +1,19 @@
+﻿Cartoon
+Duplicate layer
+adjust brightness, contrast
+filter->artistic->photocopy
+Adjust threshold for outlinees
+
+1 version:
+set to multiply
+.
+
+2 version:
+
+
+Matching foreground and background
+https://www.youtube.com/watch?v=Iw7cabDYfVk
+(average blur technique)
+
+<!>
+Feather is VERY useful when making lasso selection or any selection for that matter. It allows for it to blend better with the unselected areas.

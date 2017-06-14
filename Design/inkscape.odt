@@ -1,0 +1,22 @@
+﻿Tiling with symmetry:
+Draw basic shape, create tiled clone
+http://nagorascorner.blogspot.fr/2013/01/making-hexmap-with-inkscape.html
+
+
+Animation with svg:
+you can put two paths and animate the transition between the two using the animate tag (put both start and end path in the values paramter of animate, as well as put it as child node of the original path)
+http://fettblog.eu/blog/2013/07/16/basic-svg-path-tweening-with-smil/
+For most paths, the browser alone won't be able to interpolate a path between the two, so first you need to interpolate in inkscape (extensions→ paths, interpolate) then copy paste the two resulting paths
+
+Rotations in 3d
+https://www.youtube.com/watch?v=7HD5vE0LGWQ
+http://www.petercollingridge.co.uk/pygame-3d-graphics-tutorial/rotation-3d
+
+→ Make sure to correctly compute centroid of the figure
+
+http://www.quirksmode.org/blog/archives/2009/09/the_html5_drag.html
+→ You.Don't.Wanna.Use.Drag.Event
+
+→ out of water animation
+https://youtu.be/2kH9-yyUzew?t=163
+

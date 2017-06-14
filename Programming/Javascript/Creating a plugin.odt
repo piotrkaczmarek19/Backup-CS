@@ -1,0 +1,14 @@
+﻿Prototype is used to attach new methods to an object after it has been declared. It is more efficient than using this.method inside of the declaration, in that latter case the method is completely recreated every time the object is instantiated
+
+this.changeSlide = $.proxy(this.changeSlide,this);
+Changes the value of this so that it doesnt point to the local env, but rather to the plugin itself.
+
+.eq(0) reduces the set of selected elements to the one in the first index.
+
+http://blog.teamtreehouse.com/writing-your-own-jquery-plugins
+
+Make sure to include a return in your jquery method, as otherwise you won't be able to chain any other method to it.
+
+=> build modal plugin for on picture click
+
+ return this.each(function(){}) inside the definition of your plugin allows you to apply the plugin to all instances pf the elem you want to apply it to (don't forget the return to be able to chain your plugins).

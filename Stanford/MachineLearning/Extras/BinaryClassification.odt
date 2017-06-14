@@ -1,0 +1,15 @@
+﻿Perceptron vs Winnow
+
+Perceptron and Winnow are both linear algorithms used for binary classification, although they have fallen out of fashion nowadays.
+
+You start off with a line cutting the plane and you go through the points one by one. Each time a point is on the wrong side of the line, 
+
+
+
+you tilt the hyperline to cross that point
+
+
+
+As we can see, it is limited to simple linear model and can loose efficiency when there are a lot of features. Because we are adjusting the boundary with each iteration, this algorithm is called “error driven”
+
+Winnow is more robust for high dimensional feature spaces. 

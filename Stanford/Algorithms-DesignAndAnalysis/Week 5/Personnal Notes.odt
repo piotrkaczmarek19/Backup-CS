@@ -1,0 +1,18 @@
+﻿Dijkstra Shortest Path Algorithm
+We assume that there indeed a path between the two edges (if not, we run a bfs first to extract the unconnected edges)
+Second, we assume that there are no negative lengths
+BFS alone can solve this problem of shortest path, but only in the case that all distances between edges are exactly 1.
+
+Basically we divide our graph in two parts: visited edges and not visited edges. At each instance of the loop, we take the minimum of the equation:
+
+	distance_already_crossed + length crossing edge
+
+Heap: data structure that has numerical keys. Operations it can support are insert and extract object with minimal/maximal key value with O(lg n) running time. Use it for eg when algorithm does repeated minimums searches (seleciton sort => heapsort)
+Heap is a tree data structure whose parent-child order pattern is always the same, namely a parent node is always either bigger or smaller than its children, which leads to a max heap or a min heap. A binary heap has no more than two child nodes for each node. As a specific data structure, heap is also referred to priority queue, an abstract data structure. 
+
+Binary search Tree: 
+Basically a dynamic version of a sorted array (handles insertions and deletions in log time)
+One node represents a key
+Core property:
+There are many possible trees for a given set of keys.
+

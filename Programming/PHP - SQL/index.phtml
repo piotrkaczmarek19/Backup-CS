@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Password protected page</h1>
+
+    <form action="form.php" method="post">
+        <input type="text" name="username"/>
+        <input type="password" name="password"/>
+        <input type="submit" value="submit"/>
+    </form>
+
+    <div class="Minichat">
+        <h1>Mini Chat</h1>
+
+        <form action="chat_post.php" method="post">
+            <label for="pseudo">pseudo: </label><input type="text" name="pseudo"/>
+            <label for="message">message: </label><input type="text" name="message"/>
+            <input type="submit"/>
+        </form>
+        <?php
+            foreach($messages as $message){
+                print "<strong>$message[pseudo]</strong>
+                       <span>$message[message]</span>
+                       <br>
+                       ";
+            }
+        ?>
+    </div>
+
+    <h1>Blog</h1>
+    <?php
+        foreach($billets as $billet){
+            print("<h2>$billet[titre]</h2>
+                    <p>$billet[date_creation]</p>
+                    <p>$billet[contenu]</p>
+                    <form action='commentaires.php' method='POST'>
+                        <input type='hidden' value='$billet[id]' name='billet_id'/>
+                        <input type='submit' value='Voir commentaires'/>
+                    </form>");
+        }
+    ?>
+</body>
+</html>

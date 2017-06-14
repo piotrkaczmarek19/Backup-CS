@@ -1,0 +1,131 @@
+﻿	PHP has a bad reputation because it has emerged as a personnal project, but it has 80% of the market shares and has a very rich ecosystem of people contributing to its development
+
+Creating a web app through Agile Software Development (SCRUM)
+
+We are going to work on successive iterations of the web app, each time adding to its content. SCRUM is a way of working,a methodology.
+
+We are going to create our own cms through these phases
+
+To help us out, we will use the micro-framework Silex. It is a lightweight framework that is a good starting point if you want to learn symfony. 
+
+Composer
+
+Composer is used to manage dependecies. It is basically what creates the paths and downloads all the necessary elements. (like bower?)
+
+
+=> Creating a basic route
+install composer
+
+create working dir
+composer require league/route
+
+=> create additionnal directories
+
+move view.php to view, model.php to src, index.php and style.css to web. Next you will need to define the routes in a routes.php inside the app dir
+
+This is like a controller file in angular, in the second part you define how the browser will act during the process of generating the HTML content
+This chunk of code tells the browser how to act when you type in the '/' adress in the navbar
+
+After that we complete the routing process in the index.php
+
+
+
+
+
+
+
+
+
+
+
+
+This handles entry http requests
+
+Then we create and set up our .htaccess file, which will configure the Apache server to redirect any http request towards index.php, making index.php the central page for our website.
+
+If you change index.php on line 7 to something else (ex alternative.php, people will see the alternative.php script when entering you website from google.
+
+Defining a virtual host
+
+This is what you are going to do so that your app nest in a depository like http://my-app.com. This is what gives your site adress its true and traditional form.
+To do this, open the virtual host conf file with 
+
+and add these lines
+
+That way, the root of your app is in web, and no one can access files that are somewhere else via http external request
+
+extending our model
+
+We are gonna create a Plain Old PHP Object (POPO), a simple class with only the properties of Article.php in the Domain folder, no fancy stuff
+
+We will use that class to access the DB, but by doing that, we will leave the traditional PDO method for the new DBAL procedure.
+Just like PDO, it can interact with databases no matter which SGDBR is used (mysql, oracle or PostrgreSQL)
+ 
+Create a file named src/DAO/ArticleDAO.php and paste this code
+
+
+Then, update your composer.json 
+
+
+
+
+
+
+
+
+
+
+
+This loads all the data inside the src repertory: no need to require  every single class everytime! It also replaces the old and unfashionable autoload.php workaround.
+
+Now, we create the app.php file and the first thing we want to do is allow our app to use the ressource for DAO (first part of the code). Next thing we will define a file that will improve the handling of db's, called prod.php in app/config 
+
+
+
+So, now, we have to modify our controller routes.php file, because it is still configured to route through model.php, which was relevant in the previous iteration of the site. Instead of the getArticles() function we use the $app module
+
+
+
+
+
+
+Notice how the view $view will have access to $articles variable.
+We update the view.php
+
+
+And finally, we update the index.php
+
+This is how our app tree looks like:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Common problem: j'obtiens une erreur de type "ClassNotFoundException".
+
+
+
+
+
+
+
+Remember to update your composer.json 

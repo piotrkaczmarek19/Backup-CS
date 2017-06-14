@@ -1,0 +1,135 @@
+﻿Booleans start with a capital letter
+
+Concatenation : “Spam “ + “and “ + “eggs”
+
+Be careful with object types. Convert an int in str if the rest are str too:
+
+
+
+
+
+In case of a variable, use %s. %s is a placeholder that tells python to go the object at the end of the line and replace 
+it with one of the variables. The variable it will choose is the first to the left and so on for the next ones.
+
+
+
+
+
+
+
+
+
+
+What if the variable we want to concatenate is a raw input? It's the same
+
+
+
+
+
+
+
+
+
+
+
+The datetime library
+
+Here is an example of how to print datetime.now() in a proper manner
+
+
+Bollean
+
+If you pass not in front of True, it will return False
+If you pass not in front of True, it will return False
+
+In Python, there is an order, just like in Math, to bool operators
+
+
+Conditionals and control flow
+
+
+if(conditon){action} => if condition : action
+
+var variable = function(){} => def function() : if condition : action return
+
+
+
+
+Indentation is really important and the code won't run if not respected.
+
+PigLatin translator
+
+x.isalpha() returns false if the variable contains anything else than letters (a string with numbers won't do)
+Every string is also an array, so we can access all the letters inside like this
+letter_second = string[1]
+middle_letters = string[1:len(string)-1]
+
+Functions
+
+Docstring: comments specific to functions, 
+def function():
+	“”” Docstring, what the function does “””
+	action
+
+
+If you wish to use some math function, you must import the math library and then call the wanted function as method of that library
+
+
+
+
+
+However, if you just want to import the specific function sqrt from the library,
+
+This works just like SQL. If you want to import everything:
+
+from math import *
+
+It's not a good idea however, cuz then the methods are treaded as native (dont have to library.method them, you just write method), it can create conflicts, so it's just safer to import math
+
+You can print out the type of a variable usin the type() function
+
+
+
+Python Lists 
+
+Kinda like arrays.. I guess? Definition of empty array:0
+
+suitcase = [] 
+
+append values to the end of an array
+=> array.append(values)
+
+
+This tells python to expect an integer (%d) instead of a string (%s)
+
+Extracting values from array
+=>
+
+
+
+
+=> myList[:4] returns first 4
+=> myList[4:] returns from 5th to last.
+
+Searching a list
+=> the myList.index(value) method returns the key of a value
+
+Inserting values
+=> myList.insert(index, values) is a method and can insert any value at any index.
+
+
+Here we insert cobra where duck was in the array. This will push everything after duck including by one spot to the right.
+
+For loop
+
+works the same as if function
+
+This is a dictionnary, or what we know as hash:
+
+
+You delete pairs off of a dictionnary using the del command
+
+If it is a list, you use the remove command instead
+
+
+

@@ -1,0 +1,40 @@
+﻿Start Xampp:
+sudo /opt/lampp/lampp start
+
+Before anything, link your working dir (ex: sites) to htdocs in xampp using:
+ln -s /opt/lampp/htdocs/ ~/Desktop/
+ now access with localhost/$user
+
+First we are going to access the mysql server via the command line:
+
+-u means user(root) and -p password is blank cuz its localhost.
+
+By then, all our commands should be prefixed by mysql>
+
+ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock
+
+=> remove apparmor
+=> install mysql-server
+
+Then, create your db using
+
+CREATE DATABASE IF NOT EXISTS db_name
+
+Accessing phpmyadmin on browser: access denied
+
+Reset the privileges in the console using:
+=> mysql> GRANT ALL PRIVILEGES ON *.* TO root@localhost IDENTIFIED BY ' your current password ' WITH GRANT
+
+=> Or try just changing localhost to 127.0.0.1 in the config.inc.php file
+
+Then create the table with:
+
+USE db_name
+CREATE TABLE t_article (art_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, art_title VARCHAR(100), art_content VARCHAR(1000));
+
+
+
+
+Setting new password or user:
+
+

@@ -1,0 +1,42 @@
+﻿Namespaces are a system that are supposed to tackle any potential conflict that would arise from two classes or functions that are named the same. A namespace file is typically called like namespace.ns.php
+
+It is inspired by the libraries present in C++ or Python. Here, instead of the libraries, we are talking about folders. A folder that contains the definitions of functions, classes or constants is a namespace. 
+
+When you do this
+
+You are declaring your new namespace, by inserting the code on line 2 at the beginning. 
+
+Anytime you will call strlen, it will display hello world instead of the original purpose
+
+If you want to call the original strlen function, put a backslash in front:
+\strlen()
+
+Writing several namespaces
+
+
+__Namespace__ : constant that returns the name of the namespace you are currently in.
+
+Declaring a subnamespace
+
+namespace A/B: namespace B in A
+
+Accessing a different namespace
+
+Specify the name of the namespace followed by \ followed by the function :
+
+\A\B\function()
+
+This functin is called in an absolute manner.
+
+This introduces us to the concept of the scope  of a namespace. Just like we use $this in OOP, we can use namespace before a function to call it inside the namespace
+
+namespace\function()
+
+Creating aliases
+If you have too many inclusive namespaces, use an alias:
+
+use A\B\C\D as nsF
+
+We can see that use is what require is to scripts.
+
+

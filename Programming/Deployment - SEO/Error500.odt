@@ -1,0 +1,2 @@
+Problem 500 with PHP files are oftne caused by permissions: 
+the hp file must be 644 and the containing folder must be 755

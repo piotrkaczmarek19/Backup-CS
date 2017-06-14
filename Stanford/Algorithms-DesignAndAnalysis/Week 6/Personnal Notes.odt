@@ -1,0 +1,12 @@
+﻿A hash table always uses some function operating on a value to determine where a value will be stored. A Dictionary (as I believe you intend it) is a more general term, and simply indicates a lookup mechanism, which might be a hash table or might be implemented by a simpler structure which does not consider the value itself in determining its storage location.
+
+We know dictionnaries are created using a hashing method, but in general, most if not all hashing functions can result in collisions, i.e h(x) = h(y). There are two solutions to this:
+separate chaining
+https://www.youtube.com/watch?v=_6IGfyI-6vM
+(keeping a list inside the hash)
+open addressing (only one object per bucket)
+
+Load factor: How many objects on average per bucket. It has to be o(1) for operations to be run in constant time (such as looking up a value in a dictionnary)
+
+Every hash function has a pathological data set that will make it run in a linear time (DNS attacks are based on finding the correct pathological data set for the hashing functions in a server)
+solutions: either design a crytographic hash function impossible to reverse engineer or design a family of hash functions and use randomization
